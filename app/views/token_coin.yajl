@@ -1,0 +1,4 @@
+json = {
+  userId: token_coin.user_id,
+  tokenCoin: token_coin.token_coin
+}

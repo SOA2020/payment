@@ -1,0 +1,18 @@
+version: '3'
+services:
+  payment_db:
+    image: postgres:alpine
+    volumes:
+      - ./.persistence/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 15432:5432
+  user:
+    build:
+      context: .
+    ports:
+      - 9002:9002
+    depends_on:
+      - payment_db
+    #command: "rake db:migrate"
