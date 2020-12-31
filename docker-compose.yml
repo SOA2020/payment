@@ -6,8 +6,8 @@ services:
       - ./.persistence/db:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: postgres
-    ports:
-      - 15432:5432
+    #ports:
+    #  - 15432:5432
   user:
     build:
       context: .
